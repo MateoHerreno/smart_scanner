@@ -99,6 +99,8 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+AUTH_USER_MODEL = 'api_core.Usuario' # Ajusta 'api_core' según el nombre real de tu app
+
 
 # Internationalization
 # https://docs.djangoproject.com/en/5.2/topics/i18n/
