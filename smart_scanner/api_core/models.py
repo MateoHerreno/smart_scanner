@@ -45,7 +45,7 @@ class PermisoPersonalizado(models.Model):
     def __str__(self):
         return self.accion
     
-class red(models.Model):
+class Red(models.Model):
     nombre = models.CharField(max_length=100, unique=True)
     ssid = models.CharField(max_length=100, unique=True)
     password = models.CharField(max_length=100, unique=True)
@@ -54,3 +54,22 @@ class red(models.Model):
 
     def __str__(self):
         return self.nombre
+
+class Alerta(models.Model):
+    usuario = models.ForeignKey('api_core.Usuario', on_delete=models.CASCADE,)
+    ubicacion = models.CharField(max_length=265)
+    fecha_hora = models.DateTimeField()
+    estado = models.BooleanField(default=False)
+
+    def __str__(self):
+        return f"Alerta de {self.usuario} en {self.ubicacion} el {self.fecha_hora}"
+
+class Dispositivos(models.Model):
+    mac = models.CharField(max_length=265)
+    usuario = models.ForeignKey('api_core.Usuario', on_delete=models.CASCADE,)
+    mensaje = models.CharField(max_length=265)
+    fecha_hora = models.DateTimeField()
+    configuracion= models.CharField(max_length=265)
+
+    def __str__(self):
+        return f"{self.usuario}"

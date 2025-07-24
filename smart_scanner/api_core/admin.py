@@ -14,7 +14,7 @@ class UsuarioAdmin(admin.ModelAdmin):
     search_fields = ('cedula', 'nombre', )
     ordering = ('id',)
 
-@admin.register(red)
+@admin.register(Red)
 class UsuarioAdmin(admin.ModelAdmin):
     list_display = ('nombre', 'ssid', 'password', 'url_api', 'autonomo')
     search_fields = ('nombre', )
@@ -25,3 +25,13 @@ class PermisoPersonalizadoAdmin(admin.ModelAdmin):
     list_display = ('accion', 'usuario', 'admin',)
     list_editable = ('usuario', 'admin',)
     search_fields = ('accion',)
+
+@admin.register(Alerta)
+class PerfilAdmin(admin.ModelAdmin):
+    list_display = ['id','usuario','ubicacion','fecha_hora','estado']
+    ordering = ('id',)
+
+@admin.register(Dispositivos)
+class PerfilAdmin(admin.ModelAdmin):
+    list_display = ['id','mac','usuario','fecha_hora','mensaje','configuracion']
+    ordering = ('id',)
