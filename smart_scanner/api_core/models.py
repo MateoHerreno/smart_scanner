@@ -7,10 +7,16 @@ from .authentication import CustomUserManager
 
 class Rol(models.Model):
     nombre = models.CharField(max_length=100, unique=True)
-    descripcion = models.CharField(max_length=20)
+    descripcion = models.CharField(max_length=254)
 
     def __str__(self):
         return self.nombre
+
+    @staticmethod
+    def inicializar_roles():
+        roles = ["administrador", "operador"] 
+        for nombre in roles:
+            Rol.objects.get_or_create(nombre=nombre)
 
 class Usuario(AbstractBaseUser, PermissionsMixin):
     cedula = models.IntegerField(unique=True, validators=[MinValueValidator(0)])
@@ -34,8 +40,8 @@ class Usuario(AbstractBaseUser, PermissionsMixin):
         # Validación de rol (opcional)
         usuario_modificando = getattr(self, '_modificado_por', None)
         if usuario_modificando and isinstance(usuario_modificando, Usuario):
-            if self.rol < usuario_modificando.rol:
-                raise ValidationError("No puedes asignar un rol superior al tuyo.")
+            """if self.rol < usuario_modificando.rol:
+                raise ValidationError("No puedes asignar un rol superior al tuyo.")"""
         super().save(*args, **kwargs)
 
 class PermisoPersonalizado(models.Model):

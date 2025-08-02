@@ -1,0 +1,21 @@
+[
+  { "accion": "create_usuario", "admin": true,"usuario": false },
+  { "accion": "update_usuario", "admin": true,"usuario": false },
+  { "accion": "delete_usuario", "admin": true,"usuario": false },
+  { "accion": "read_usuario",   "admin": true,"usuario": false },
+
+  { "accion": "create_red", "admin": true,"usuario": false },
+  { "accion": "update_red", "admin": true,"usuario": false },
+  { "accion": "delete_red", "admin": true,"usuario": false },
+  { "accion": "read_red",   "admin": true,"usuario": false },
+
+  { "accion": "create_alerta", "admin": true,"usuario": false },
+  { "accion": "update_alerta", "admin": true,"usuario": false },
+  { "accion": "delete_alerta", "admin": true,"usuario": false },
+  { "accion": "read_alerta",   "admin": true,"usuario": false },
+
+  { "accion": "create_dispositivo", "admin": true,"usuario": false },
+  { "accion": "update_dispositivo", "admin": true,"usuario": false },
+  { "accion": "delete_dispositivo", "admin": true,"usuario": false },
+  { "accion": "read_dispositivo",   "admin": true,"usuario": false }
+]

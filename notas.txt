@@ -3,3 +3,10 @@ venv\Scripts\activate
 pip freeze > requirements.txt
 pip install --upgrade pip
 pip install -r requirements.txt
+
+
+validar que ningun dmin pueda dar rol admin a usuarios
+quite rol de serialicer de creacion y el staff, 
+queda pendiente subir el jwt y la seguridad de tiene permiso
+
+conectarse y probar los endpoints

@@ -10,7 +10,7 @@ class PerfilAdmin(admin.ModelAdmin):
 
 @admin.register(Usuario)
 class UsuarioAdmin(admin.ModelAdmin):
-    list_display = ('id','cedula', 'email', 'nombre', 'password', 'rol', 'is_active')
+    list_display = ('id','cedula', 'email', 'nombre', 'rol', 'is_active' ,'password',)
     search_fields = ('cedula', 'nombre', )
     ordering = ('id',)
 
@@ -22,7 +22,7 @@ class UsuarioAdmin(admin.ModelAdmin):
 
 @admin.register(PermisoPersonalizado)
 class PermisoPersonalizadoAdmin(admin.ModelAdmin):
-    list_display = ('accion', 'usuario', 'admin',)
+    list_display = ('accion','admin', 'usuario', )
     list_editable = ('usuario', 'admin',)
     search_fields = ('accion',)
 
